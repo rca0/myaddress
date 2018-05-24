@@ -1,5 +1,36 @@
 # myAddress
 
+## Getting started 
+
+Copy the repository:
+
+```bash
+git clone git@github.com:rca0/myaddress.git
+```
+
+## Using Makefile
+
+targets | description
+--- | ---
+all | executes build and run targets
+build | build docker image
+run | execute application
+clean | force prune all docker images
+
+It is not needs to install Node in your system operational, just the Docker.
+
+[Get Docker](https://www.docker.com/get-docker)
+
+## Docker
+
+- Build image
+
+This stage will build docker image. Name default: `ruancasas/myaddress`
+
+ ```bash
+ make build -e IMAGE=<name>
+ ```
+
 ## Backend
 
 - Running server
