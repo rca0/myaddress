@@ -1,5 +1,15 @@
 # myAddress
 
+## Backend
+
+- Running server
+
+This option runs server at http://<IP_ADDRESS>:8080/
+
+```bash
+make run
+```
+
 ## API
 
 - Address creation
