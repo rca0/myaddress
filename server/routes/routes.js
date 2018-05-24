@@ -1,15 +1,16 @@
 const { server } = require('./server');
 const Bounce = require('bounce');
-var addressController = require('../controllers').address;
+var addressController = require('../controllers/address');
 
 const register_routes = () => {
     server.route({
         method: 'POST',
         path: '/api/v1/address',
-        handler: async (request, h) => {
+        handler: async (req, resp) => {
             let result = null;
             try {
-                return await addressController.create;                
+                result = await addressController.create(req, resp);
+                return result;
             } catch (err) {
                 Bounce.rethrow(err, 'system');
             }

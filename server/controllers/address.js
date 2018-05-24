@@ -1,15 +1,17 @@
-var myaddress = require('../models').myaddress;
+var model = require('../models/index');
 
 module.exports = {
     async create(req, resp) {
+        let result = null;
         try {
-            await myaddress.create({
-                state: req.body.state,
-                city: req.body.city,
-                zipcode: req.body.zipcode,
-            })
+            result = await model.myaddress.create({
+                state: req.payload.state,
+                city: req.payload.city,
+                zipcode: req.payload.zipcode,
+            });
+            return result
         } catch (err) {
-            console.log(err);
+            Bounce.rethrow(err, 'system');
         }
     },
 };
