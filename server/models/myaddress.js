@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   var myaddress = sequelize.define('myaddress', {
     state: DataTypes.STRING,

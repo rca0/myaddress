@@ -1,5 +1,6 @@
 const { server } = require('./server');
 const Bounce = require('bounce');
+var addressController = require('../controllers').address;
 
 const register_routes = () => {
     server.route({
@@ -8,7 +9,7 @@ const register_routes = () => {
         handler: async (request, h) => {
             let result = null;
             try {
-                return await address.create;                
+                return await addressController.create;                
             } catch (err) {
                 Bounce.rethrow(err, 'system');
             }
