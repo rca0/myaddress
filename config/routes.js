@@ -12,7 +12,7 @@ const register_routes = () => {
             } catch (err) {
                 Bounce.rethrow(err, 'system');
             }
-            return resull;
+            return result;
         }
     });
 };
