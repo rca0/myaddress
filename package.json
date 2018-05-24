@@ -4,7 +4,10 @@
   "description": "## API",
   "main": "index.js",
   "dependencies": {
-    "hapi": "^17.5.0"
+    "hapi": "^17.5.0",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.8"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "myh4rdp4ssw0rd",
+    "database": "myaddress_dev",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "myh4rdp4ssw0rd",
+    "database": "myaddress",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "myh4rdp4ssw0rd",
+    "database": "myaddress",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  }
+}
