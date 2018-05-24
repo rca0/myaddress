@@ -14,6 +14,7 @@ WORKDIR /app
 COPY --from=build /app/node_modules node_modules
 COPY index.js /app
 COPY config/ /app/config
-RUN apk add --update nodejs-lts nodejs-npm
+RUN apk add --update nodejs-lts nodejs-npm bash
+EXPOSE 8080
 
 CMD ["node", "index.js"]
