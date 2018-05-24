@@ -23,6 +23,12 @@ It is not needs to install Node in your system operational, just the Docker.
 
 ## Docker
 
+- Run application
+
+```bash
+make run.docker
+```
+
 - Build image
 
 This stage will build docker image. Name default: `ruancasas/myaddress`
