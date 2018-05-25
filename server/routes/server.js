@@ -1,5 +1,6 @@
-const hapi = require('hapi');
+'use strict';
 
+const hapi = require('hapi');
 const server = hapi.Server({port: 8080});
 
 async function start() {
