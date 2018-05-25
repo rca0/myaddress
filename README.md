@@ -41,7 +41,7 @@ This stage will build docker image. Name default: `ruancasas/myaddress`
 
 - Running server
 
-This option runs server at http://<IP_ADDRESS>:8080/
+This option runs server at `http://<IP_ADDRESS>:8080/`
 
 ```bash
 make run
@@ -160,6 +160,17 @@ Response example:
     ]
 }
 ```
+
+- Delete address by id
+
+DELETE - /api/v1/address/{id}
+
+Request example:
+
+```bash
+curl -X DELETE https://localhost:8080/api/v1/address/1
+```
+
 
 ## DATA FORMAT
 

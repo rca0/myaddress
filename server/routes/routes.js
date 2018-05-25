@@ -60,3 +60,16 @@ server.route({
         }
     },
 });
+
+// Delete address by id
+server.route({
+    method: 'DELETE',
+    path: '/api/v1/address/{id}',
+    handler: async (req, resp) => {
+        try {
+            return await addressController.deleteById(req, resp);
+        } catch (err) {
+            Bounce.rethrow(err, 'system');
+        }
+    },
+});

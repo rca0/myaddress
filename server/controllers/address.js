@@ -62,4 +62,20 @@ module.exports = {
         new_address = await this.getById(req, resp);
         return new_address.address.dataValues;
     },
+    async deleteById(req, resp) {
+        let result = null;
+        let old_address = null;
+        old_address = await this.getById(req, resp);
+        if (old_address.address === null) {
+            return Boom.notFound();
+        }
+        try {
+            result = await model.myaddress.destroy({
+                where: {id: req.params.id}
+            });
+        } catch (err) {
+            Bounce.rethrow(err, 'system');  
+        }
+        return result
+    },
 };
