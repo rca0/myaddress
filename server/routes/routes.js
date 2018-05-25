@@ -4,7 +4,7 @@ const { server } = require('./server');
 const Bounce = require('bounce');
 var addressController = require('../controllers/address');
 
-// create
+// create address
 server.route({
     method: 'POST',
     path: '/api/v1/address',
@@ -20,7 +20,7 @@ server.route({
     },
 });
 
-// get by id
+// fetch address by id
 server.route({
     method: 'GET',
     path: '/api/v1/address/{id}',
@@ -33,7 +33,7 @@ server.route({
     },
 });
 
-// getAll 
+// get all addresses
 server.route({
     method: 'GET',
     path: '/api/v1/address',

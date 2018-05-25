@@ -12,7 +12,7 @@ module.exports = {
                 city: req.params.city,
                 zipcode: req.params.zipcode,
             });
-            return {data: result}
+            return {address: result}
         } catch (err) {
             Bounce.rethrow(err, 'system');
         }
@@ -23,7 +23,7 @@ module.exports = {
             result = await model.myaddress.find({
                 where: {id: req.params.id}
             });
-            return {data: result}
+            return {addresss: result}
         } catch (err) {
             Bounce.rethrow(err, 'system');
         }
@@ -34,7 +34,7 @@ module.exports = {
             result = await model.myaddress.findAll({});
             return {
                 total: result.length,
-                data: result
+                addresses: result
             }
         } catch (err) {
             Bounce.rethrow(err, 'system');
