@@ -53,7 +53,7 @@ make run
 
 POST - /api/v1/address
 
-Example:
+Request example:
 
 ```bash
 curl -X POST https://localhost:8080/api/v1/address \
@@ -66,6 +66,75 @@ curl -X POST https://localhost:8080/api/v1/address \
 }'
 ```
 
+Response example:
+
+```bash
+{
+    "address": {
+        "id": 1,
+        "state": "Santa Catarina",
+        "city": "Joinville",
+        "zipCode": 89218112,
+    }
+}'
+```
+
+- Fetch address by id
+
+GET - /api/v1/address/{id}
+
+Request example:
+
+```bash
+curl -X GET https://localhost:8080/api/v1/address/1
+```
+
+Response example:
+
+```bash
+{
+    "address": {
+        "id": 1,
+        "state": "Santa Catarina",
+        "city": "Joinville",
+        "zipCode": 89218112,
+    }
+}
+```
+
+- List addreses
+
+GET - /api/v1/address
+
+Request Example:
+
+```bash
+curl -X GET https://localhost:8080/api/v1/address \
+     -H "Content-Type: application/json" \
+```
+
+Response example:
+
+```bash
+{
+    "total": 2,
+    "addresses": [
+        {
+            "id": 1,
+            "state": "Santa Catarina",
+            "city": "Joinville",
+            "zipcode": 89218112,
+        },
+        {
+            "id": 2,
+            "state": "Rio de Janeiro",
+            "city": "Rio de Janeiro",
+            "zipcode": 89230982,
+        }
+    ]
+}
+```
+
 ## DATA FORMAT
 
 field | type | description
@@ -73,4 +142,3 @@ field | type | description
 state | string | the state name
 city | string | the name of city
 zipcode | int | the zip code
-
