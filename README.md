@@ -71,7 +71,7 @@ Response example:
 ```bash
 {
     "address": {
-        "id": 1,
+        "id": "3c60f170-6070-11e8-b2ce-a5c889a18731",
         "state": "Santa Catarina",
         "city": "Joinville",
         "zipCode": 89218112,
@@ -97,7 +97,7 @@ Response example:
 ```bash
 {
     "address": {
-        "id": 1,
+        "id": "3c60f170-6070-11e8-b2ce-a5c889a18731",
         "state": "Santa Catarina",
         "city": "Joinville",
         "zipCode": 89021987,
@@ -112,7 +112,7 @@ GET - /api/v1/address/{id}
 Request example:
 
 ```bash
-curl -X GET https://localhost:8080/api/v1/address/1
+curl -X GET https://localhost:8080/api/v1/address/3c60f170-6070-11e8-b2ce-a5c889a18731
 ```
 
 Response example:
@@ -120,7 +120,7 @@ Response example:
 ```bash
 {
     "address": {
-        "id": 1,
+        "id": "3c60f170-6070-11e8-b2ce-a5c889a18731",
         "state": "Santa Catarina",
         "city": "Joinville",
         "zipCode": 89218112,
@@ -146,13 +146,13 @@ Response example:
     "total": 2,
     "addresses": [
         {
-            "id": 1,
+            "id": "3c60f170-6070-11e8-b2ce-a5c889a18731",
             "state": "Santa Catarina",
             "city": "Joinville",
             "zipcode": 89218112,
         },
         {
-            "id": 2,
+            "id": "3c60f170-6070-11f4-4dce-a5c889a18333",
             "state": "Rio de Janeiro",
             "city": "Rio de Janeiro",
             "zipcode": 89230982,
@@ -168,7 +168,7 @@ DELETE - /api/v1/address/{id}
 Request example:
 
 ```bash
-curl -X DELETE https://localhost:8080/api/v1/address/1
+curl -X DELETE https://localhost:8080/api/v1/address/3c60f170-6070-11e8-b2ce-a5c889a18731
 ```
 
 
