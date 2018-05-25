@@ -20,6 +20,21 @@ server.route({
     },
 });
 
+// update address by id
+server.route({
+    method: 'PUT',
+    path: '/api/v1/address/{id}',
+    handler: async (req, resp) => {
+        let result = null;
+        try {
+            result = await addressController.updateById(req, resp);
+            return result;
+        } catch (err) {
+            Bounce.rethrow(err, 'system');
+        }
+    },   
+});
+
 // fetch address by id
 server.route({
     method: 'GET',

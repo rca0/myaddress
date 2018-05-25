@@ -79,6 +79,32 @@ Response example:
 }'
 ```
 
+- Update address
+
+Request example:
+
+```bash
+curl -X PUT https://localhost:8080/api/v1/address/1 \
+     -H "Content-Type: application/json" \
+     -d \
+'{
+    "zipCode": 89021987,
+}'
+```
+
+Response example:
+
+```bash
+{
+    "address": {
+        "id": 1,
+        "state": "Santa Catarina",
+        "city": "Joinville",
+        "zipCode": 89021987,
+    }
+}
+```
+
 - Fetch address by id
 
 GET - /api/v1/address/{id}
