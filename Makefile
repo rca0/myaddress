@@ -12,7 +12,7 @@ PORT ?= 8080:8080
 all: build run
 
 run:
-	node index.js
+	node server/index.js
 
 run.docker:
 	docker run --name myaddress --rm -p $(PORT) -it $(IMAGE) 
