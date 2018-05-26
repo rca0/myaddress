@@ -15,7 +15,7 @@ run:
 	node index.js
 
 run.docker:
-	docker run --rm -p $(PORT) -it $(IMAGE) 
+	docker run --name myaddress --rm -p $(PORT) -it $(IMAGE) 
 
 build: 
 	docker build -t $(IMAGE) $(PWD)
