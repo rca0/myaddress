@@ -30,52 +30,7 @@
   </v-form>
 </template>
 
-<script>
-  import axios from 'axios'
-  
-  const api = axios.create({
-    baseURL: 'http://localhost:8080'
-  })
-
-  export default {
-    data: () => ({
-      valid: true,
-      city: '',
-      cityRules: [
-        v => !!v || 'Campo obrigatório',
-        v => (v && v.length <= 18) || 'Este campo deve ter até 18 caracteres.'
-      ],
-      state: '',
-      stateRules: [
-        v => !!v || 'Campo obrigatório',
-        v => (v && v.length <= 18) || 'Este campo deve ter até 18 caracteres.'
-      ],
-      zipcode: '',
-      zipcodeRules: [
-        v => !!v || 'Campo obrigatório',
-        v => (v && v.length <= 10) || 'Este campo deve ter até 10 caracteres.'
-      ]
-    }),
-    methods: {
-      submit () {
-        if (this.$refs.form.validate()) {
-          api.get('/api/v1/address', {
-            city: this.city,
-            state: this.state,
-            zipcode: this.zipcode
-          }, {headers: {'Content-Type': 'application/json'}}).then(resp => {
-            console.log(resp)
-          }).catch(error => {
-            console.log(error.response)
-          })
-        }
-      },
-      clear () {
-        this.$refs.form.reset()
-      }
-    }
-  }
-</script>
+<script src="./_id.js"></script>
 
 <style>
     .right_button {
