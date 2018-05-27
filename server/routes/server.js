@@ -1,7 +1,12 @@
 'use strict';
 
 const hapi = require('hapi');
-const server = hapi.Server({port: 8080});
+const server = hapi.Server({
+    routes: {
+        cors: true
+    },
+    port: 8080
+});
 
 async function start() {
     try {
