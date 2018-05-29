@@ -5,6 +5,7 @@
 #          - build: build docker image
 #		   - test: runs NodeJS tests
 #          - clean: force prune all docker images (be careful to run) 
+#          - db.migrate: initialize database migration
 #
 
 IMAGE ?= ruancasas/myaddress
@@ -31,9 +32,13 @@ test:
 clean:
 	docker rmi -f $(shell docker images -aq)
 
+db.migrate:
+	cd server; ${HOME}/.npm-packages/bin/sequelize db:migrate
+
 .PHONY: run \
 		run.docker \
 		build \
 		build.docker \
 		test \
+		db.migrate \
 		clean

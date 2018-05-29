@@ -19,10 +19,17 @@ run | execute application
 run.docker | execute application with docker
 test | runs NodeJs tests
 clean | force prune all docker images
+db.migrate | initialize database migration
 
 It is not needs to install Node in your system operational, just the Docker.
 
 [Get Docker](https://www.docker.com/get-docker)
+
+- Database Migration
+
+```bash
+make db.migrate
+```
 
 - tests
 
