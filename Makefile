@@ -17,8 +17,9 @@ run:
 run.docker:
 	docker run --name myaddress --rm -p $(PORT) -it $(IMAGE) 
 
-build: 
-	docker build -t $(IMAGE) $(PWD)
+build:
+	rootDir=$(shell git rev-parse --show-toplevel); \
+	cd server; docker build -t $(IMAGE) $$rootDir/server
 
 clean:
 	docker rmi -f $(shell docker images -aq)
