@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - "stable"
 before_script:
-  - cd server; npm install
+  - make build
 script:
-  - cd server; npm test
+  - make test
 notifications:
   email: 
     recipients:
