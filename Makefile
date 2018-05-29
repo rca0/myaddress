@@ -14,10 +14,13 @@ all: build run
 run:
 	node server/index.js
 
+build:
+	cd server; npm install
+
 run.docker:
 	docker run --name myaddress --rm -p $(PORT) -it $(IMAGE) 
 
-build:
+build.docker:
 	rootDir=$(shell git rev-parse --show-toplevel); \
 	cd server; docker build -t $(IMAGE) $$rootDir/server
 
@@ -27,4 +30,5 @@ clean:
 .PHONY: run \
 		run.docker \
 		build \
+		build.docker \
 		clean
