@@ -40,8 +40,9 @@ server.route({
     method: 'GET',
     path: '/api/v1/address/{id}',
     handler: async (req, resp) => {
+        let addressId = req.params.id
         try {
-            return await addressController.getById(req, resp);
+            return await addressController.getById(addressId);
         } catch (err) {
             Bounce.rethrow(err, 'system');
         }
@@ -54,7 +55,7 @@ server.route({
     path: '/api/v1/address',
     handler: async (req, resp) => {
         try {
-            return await addressController.getAll(req, resp);
+            return await addressController.getAll();
         } catch (err) {
             Bounce.rethrow(err, 'system');
         }

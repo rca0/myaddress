@@ -43,18 +43,18 @@ module.exports = {
             Bounce.rethrow(err, 'system');
         }
     },
-    async getById(req, resp) {
+    async getById(addressId) {
         let result = null;
         try {
             result = await model.myaddress.find({
-                where: {id: req.params.id}
+                where: {id: addressId}
             });
             return {address: result}
         } catch (err) {
             Bounce.rethrow(err, 'system');  
         }
     },
-    async getAll(req, resp) {
+    async getAll() {
         let result = null
         try {
             result = await model.myaddress.findAll({});
