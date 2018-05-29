@@ -17,13 +17,20 @@ build | build node packages
 build.docker | build docker image
 run | execute application
 run.docker | execute application with docker
+test | runs NodeJs tests
 clean | force prune all docker images
 
 It is not needs to install Node in your system operational, just the Docker.
 
 [Get Docker](https://www.docker.com/get-docker)
 
-To run application with makefile:
+- tests
+
+```bash
+make test
+```
+
+- To run application with makefile:
 
 ```bash
 make all 

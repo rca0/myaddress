@@ -3,6 +3,7 @@
 #          - run: execute application
 #		   - run.docker: execute application with docker
 #          - build: build docker image
+#		   - test: runs NodeJS tests
 #          - clean: force prune all docker images (be careful to run) 
 #
 
@@ -24,6 +25,9 @@ build.docker:
 	rootDir=$(shell git rev-parse --show-toplevel); \
 	cd server; docker build -t $(IMAGE) $$rootDir/server
 
+test:
+	cd server; npm test
+
 clean:
 	docker rmi -f $(shell docker images -aq)
 
@@ -31,4 +35,5 @@ clean:
 		run.docker \
 		build \
 		build.docker \
+		test \
 		clean
