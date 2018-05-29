@@ -12,9 +12,7 @@ FROM alpine:3.7
 
 WORKDIR /app
 COPY --from=build /app/node_modules node_modules
-COPY index.js /app
-COPY server/ /app/server
-COPY .sequelizerc /app
+COPY . /app
 RUN apk add --update nodejs-lts nodejs-npm bash
 EXPOSE 8080
 
