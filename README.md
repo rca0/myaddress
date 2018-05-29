@@ -13,13 +13,25 @@ git clone git@github.com:rca0/myaddress.git
 targets | description
 --- | ---
 all | executes build and run targets
-build | build docker image
+build | build node packages
+build.docker | build docker image
 run | execute application
+run.docker | execute application with docker
 clean | force prune all docker images
 
 It is not needs to install Node in your system operational, just the Docker.
 
 [Get Docker](https://www.docker.com/get-docker)
+
+To run application with makefile:
+
+```bash
+make all 
+OR
+make build run
+```
+
+It will expose port 8080 to server api application (ex: http://localhost:8080/api/v1/address)
 
 ## Docker
 
