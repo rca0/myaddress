@@ -3,16 +3,41 @@
 const Bounce = require('bounce');
 const Boom = require('boom');
 const model = require('../models/index');
+const fetch = require('async-request');
+
+const URL = 'http://apps.widenet.com.br/busca-cep/api/cep/';
+const msg = 'CEP não encontrado';
+
+module.exports = async (value) => 
+    new Promise((resolve, reject) => {
+    request(value, (error, response, data) => {
+        if(error) reject(error)
+        else resolve(data)
+    })
+})
 
 module.exports = {
     async create(req, resp) {
+        let zipcode = req.payload.zipcode;
         let result = null;
+        try {
+            let res = await fetch(`${URL}${zipcode}`);
+            if (!res) {
+                return Boom.internal();
+            }
+            else if (res.body == msg) {
+                return {message: res.body}
+            }
+        } catch (err) {
+            Bounce.rethrow(err, 'system');
+        }
         try {
             result = await model.myaddress.create({
                 state: req.payload.state,
                 city: req.payload.city,
                 zipcode: req.payload.zipcode,
             });
+            console.log(result);
             return {address: result}
         } catch (err) {
             Bounce.rethrow(err, 'system');
